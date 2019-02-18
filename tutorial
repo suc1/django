@@ -1,4 +1,16 @@
-1.8
+==1.8==
 https://docs.djangoproject.com/en/1.8/intro/tutorial01/
-2.2
-https://docs.djangoproject.com/en/2.2/intro/tutorial01/
+
+1. Writing your first Django app, part 1
+1.1 django-admin startproject mysite	//create app
+1.2 Database setup
+1.3 python3 manage.py migrate		//create system tables in the database
+1.4 python3 manage.py runserver		//run service
+
+2. Creating models
+2.1 python3 manage.py startapp polls
+2.1 Activating models
+2.2 python3 manage.py makemigrations polls	//create script
+2.3 python3 manage.py sqlmigrate polls 0001	//migration -> SQL
+2.4 python3 manage.py migrate			//create those model tables in your database
+
