@@ -1,25 +1,80 @@
 ==1.8==
 https://docs.djangoproject.com/en/1.8/intro/tutorial01/
 
+Part 0: Quick install guide
+1. Install Python
+2. Set up a database
+3. Install Django
+4. import django		print(django.get_version())
+5. python3 -m django --version  ??
+
+
 Part 1. Writing your first Django app, part 1
 1.1 django-admin startproject mysite	//create web site
+
 1.2 Database setup
-1.3 python3 manage.py migrate		//create system tables in the database
-1.4 python3 manage.py runserver		//run service
+1.2.1 set TIME_ZONE ='EST'
+1.2.2 python3 manage.py migrate			//create system DB
 
-Part 2. Creating models
-2.1 python3 manage.py startapp polls	//create app
+1.3 python3 manage.py startapp polls	//create app
+1.3.1 Creating models
+1.3.2 Activating models, settings.py
+1.3.3 python3 manage.py makemigrations polls		//create model SQL command
+1.3.4 python3 manage.py migrate			//create system tables in the database
+1.3.5 python3 manage.py shell			//read / add DB
 
-Activating models
-2.2 python3 manage.py makemigrations polls	//create script
-2.3 python3 manage.py sqlmigrate polls 0001	//check migration -> SQL
-2.4 python3 manage.py migrate			//create those model tables in your database
 
-Playing with the API
-2.5 python3 manage.py shell		//command line
+Part 2: admin page
+2.1 python3 manage.py createsuperuser
+2.2 python3 manage.py runserver
+2.3 http://127.0.0.1:8000/admin/
+2.4 admin.site.register(Question)		admin.site.register(Choice)		//Modify Question & Choice seperately
+2.5 inlines = [admin.TabularInline]	
+2.6 list_display = ('question_text', 'pub_date')
+2.7 Every project has own template:		BASE_DIR = (The folder has manage.py)		override templates
+	/usr/share/python-django-common/django/contrib/admin/templates/admin/base_site.html
+
 
 Part 3. View
-3.1 http://localhost:8000/polls/
+3.1 urls.py
+		url(r'^polls/', include('polls.urls'))
+		url(r'^$', views.index, name='index'),
+3.2 http://localhost:8000/polls/
+3.3  (?P<question_id>[0-9]+)
+3.4 	Question.objects.order_by('-pub_date')[:5]
+3.5 	', '.join([p.question_text for p in latest_question_list])
+3.6	polls/templates/polls/index.html			//Template namespacing
+3.7 template = loader.get_template('polls/index.html')			return HttpResponse(template.render(context, request))
+	render(request, 'polls/index.html', context)	//OR
+3.8 get_object_or_404(Question, pk=question_id)
+		get_list_or_404()
+3.9 {% for choice in question.choice_set.all %}
+3.10 Removing hardcoded URLs in templates
+	<a href="/polls/{{ question.id }}/">{{ question.question_text }}</a>
+	<a href="{% url 'detail' question.id %}">{{ question.question_text }}</a>
+	//url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
+3.11 Namespacing URL names
+	url(r'^polls/', include('polls.urls', namespace="polls")),
+	<a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+
+	
+Part 4: form
+4.1 selected_choice = p.choice_set.get(pk=request.POST['choice'])
+4.2 generic views system,		//from django.views import generic
+	url(r'^$', views.IndexView.as_view(), name='index'),
+	url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+4.3 class IndexView(generic.ListView):
 
 
-part 4. 
+part 5. Test
+4.1 python3 manage.py test polls
+4.2 django.test.TestCase
+4.3 Test a view		//django.test.Client
+4.3.1 "./manage.py shell"  OR  "python3 manage.py shell"
+4.4 LiveServerTestCase		https://www.seleniumhq.org/
+
+Part 6: static files, images, JavaScript, or CSS
+6.1 django.contrib.staticfiles 
+6.2 {% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
