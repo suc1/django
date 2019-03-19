@@ -1,6 +1,20 @@
 ==1.8==
 https://docs.djangoproject.com/en/1.8/intro/tutorial01/
 
+Part -1: Django at a glance
+1. Design your model
+2. create the database tables:	python3 manage.py migrate
+3. read/add DB:	python3 manage.py shell
+4. admin interface
+5. Design your URLs: urls.py
+6. Write your views: views.py
+7. Design your templates: 
+	Variables			{{ article.headline }}
+	template filter		{{ article.pub_date|date:"F j, Y" }}
+	custom template filters
+	custom template tags
+	template inheritance	{% extends "base.html" %}	
+
 Part 0: Quick install guide
 1. Install Python
 2. Set up a database
@@ -74,7 +88,37 @@ part 5. Test
 4.4 LiveServerTestCase		https://www.seleniumhq.org/
 
 Part 6: static files, images, JavaScript, or CSS
-6.1 django.contrib.staticfiles 
+6.1 django.contrib.staticfiles	
 6.2 {% load staticfiles %}
 	<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
+Part 7: How to write reusable apps
+7.1 https://djangopackages.org/
+	https://pypi.org/
+	https://readthedocs.org/
+7.2 prerequisites: python3-setuptools	python3-pip
+7.3 README.rst		LICENSE		setup.py	MANIFEST.in
+7.4 python3 setup.py sdist
+7.5 cd /home/dev/django/mysite
+	pip3 install --user ~/django/django-polls/dist/django-polls-0.1.tar.gz
+	// /home/dev/.local/lib/python3.5/site-packages/
+7.6 pip3 uninstall django-polls
+
+Part 8: What to read next
+https://docs.djangoproject.com/en/1.8/search/
+https://docs.djangoproject.com/en/1.8/genindex/
+https://docs.djangoproject.com/en/1.8/ref/
+https://github.com/django/django/tree/master/docs
+
+https://docs.djangoproject.com/en/1.8/intro/
+
+**
+https://docs.djangoproject.com/en/1.8/topics/
+**
+
+https://docs.djangoproject.com/en/1.8/howto/
+https://docs.djangoproject.com/en/1.8/faq/
+
+Part 9: Writing your first patch for Django
+
+Part 20: virtualenv
