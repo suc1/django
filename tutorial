@@ -198,3 +198,13 @@ Part 2: DB, Model, admin
 	python3 manage.py createsuperuser
 	http://127.0.0.1:8000/admin/
 
+Part 3: add more view
+3.1 add detail, results, vote in polls/views.py
+3.2 polls/templates/polls/index.html
+	from django.template import loader
+3.3 from django.shortcuts import get_object_or_404, render
+	return render(request, 'polls/index.html', context)
+	question = get_object_or_404(Question, pk=question_id)
+3.4 {{ question.question_text }} lookup order: dictionary -> attribute -> list-index
+	{% for %} Method-calling 
+

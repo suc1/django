@@ -1,0 +1,13 @@
+1. Question {
+	PK		id,
+	char[200]	question_text,
+	dateTime	pub_date,
+}
+
+2. Choice {
+	PK		id,
+	ForeignKey	question,
+	char[200]	choice_text,
+	int		votes=0,
+}
+
