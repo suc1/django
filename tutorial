@@ -205,6 +205,12 @@ Part 2.1 admin page
 4. fieldsets 
 	admin.site.register(Choice)
 5. admin.site.register(Choice)		//Modify Question & Choice seperately
+6. admin.StackedInline/TabularInline : inline modify Choice
+
+7. inlines = [admin.TabularInline]	
+8. list_display = ('question_text', 'pub_date')
+9. Every project has own template:		BASE_DIR = (The folder has manage.py)		override templates
+	/usr/share/python-django-common/django/contrib/admin/templates/admin/base_site.html
 
 Part 3: add more view
 3.1 add detail, results, vote in polls/views.py
