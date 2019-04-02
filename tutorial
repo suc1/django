@@ -208,3 +208,8 @@ Part 3: add more view
 3.4 {{ question.question_text }} lookup order: dictionary -> attribute -> list-index
 	{% for %} Method-calling 
 
+Part 4: Write a simple form
+4.1 polls/templates/polls/detail.html
+4.2 Use generic views: Less code is better
+4.3 polls/urls.py, views.IndexView.as_view()
+
