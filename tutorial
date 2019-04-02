@@ -198,6 +198,14 @@ Part 2: DB, Model, admin
 	python3 manage.py createsuperuser
 	http://127.0.0.1:8000/admin/
 
+Part 2.1 admin page
+1. polls/admin.py
+2. admin.site.register(Question)
+3. admin.ModelAdmin : change field order
+4. fieldsets 
+	admin.site.register(Choice)
+5. admin.site.register(Choice)		//Modify Question & Choice seperately
+
 Part 3: add more view
 3.1 add detail, results, vote in polls/views.py
 3.2 polls/templates/polls/index.html
