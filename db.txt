@@ -10,3 +10,24 @@
 	char[200]	choice_text,
 	int			votes=0,
 }
+
+==Django at a glance==news==
+Reporter {
+	PK			id,
+	char[70]	full_name,
+}
+
+Article {
+	PK			id,
+	dateTime	pub_date,
+	char[200]	headline,
+	text		content,
+	FK			reporter,
+}
+
+1. Design your model
+1.1 python3 manage.py startapp news
+1.2 polls/views.py
+	polls/urls.py	<--- mysite/urls.py
+1.3 python3 manage.py runserver
+
