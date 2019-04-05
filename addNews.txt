@@ -40,3 +40,9 @@ news_article {
 2. admin
 mysite/news/admin.py
 
+3. Design your URLs: URLconf
+mysite/news/urls.py
+
+4.Write your views
+
+5.Design your templates

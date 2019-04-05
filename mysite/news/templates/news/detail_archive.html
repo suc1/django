@@ -1,0 +1,11 @@
+{% extends "news/base.html" %}
+
+{% block title %}Articles {{ article.headline }}{% endblock %}
+
+{% block content %}
+<h1>Articles for {{ article.pub_date }}</h1>
+    <p><h3>{{ article.headline }}</h3></p>
+    <p>By {{ article.reporter.full_name }}</p>
+    <p>Published {{ article.pub_date|date:"F j, Y" }}</p>
+    <textarea> {{ article.content }}</textarea>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% load static %}
+<html>
+<head>
+    <title>{{article.headline }}</title>
+</head>
+<body>
+    <p><h3>{{ article.headline }}</h3></p>
+    <p>By {{ article.reporter.full_name }}</p>
+    <p>Published {{ article.pub_date|date:"F j, Y" }}</p>
+    <textarea> {{article.content}} </textarea>
+</body>
+</html>
