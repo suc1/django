@@ -46,3 +46,5 @@ mysite/news/urls.py
 4.Write your views
 
 5.Design your templates
+
+6.Add static files
