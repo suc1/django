@@ -235,3 +235,9 @@ Part 5: testing
 Part 6: staticfiles
 6.1 django.contrib.staticfiles
 
+Part 7: Customize the admin form (Part 2.1)
+7.10 python3 -c "import django; print(django.__path__)"
+7.11 Every project has own template:		BASE_DIR = (The folder has manage.py)		override templates
+	/home/dev/AIMatchMaker/VE/lib/python3.7/site-packages/django/contrib/admin/templates/admin
+
+
