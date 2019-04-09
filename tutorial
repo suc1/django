@@ -227,3 +227,7 @@ Part 4: Write a simple form
 4.2 Use generic views: Less code is better
 4.3 polls/urls.py, views.IndexView.as_view()
 
+Part 5: testing
+5.1 django.test.TestCase
+5.2 python3 manage.py test polls
+5.3 django.test.Client
