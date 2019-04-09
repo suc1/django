@@ -240,4 +240,30 @@ Part 7: Customize the admin form (Part 2.1)
 7.11 Every project has own template:		BASE_DIR = (The folder has manage.py)		override templates
 	/home/dev/AIMatchMaker/VE/lib/python3.7/site-packages/django/contrib/admin/templates/admin
 
+Part 8: How to write reusable apps
+7.1 https://djangopackages.org/
+	https://pypi.org/
+	https://readthedocs.org/
+7.2 prerequisites: python3-setuptools	python3-pip
+7.3 README.rst		LICENSE		setup.py	MANIFEST.in
+7.4 python3 setup.py sdist
+7.5 cd /home/dev/django/mysite
+	pip3 install --user ~/django/django-polls/dist/django-polls-0.1.tar.gz
+	// /home/dev/.local/lib/python3.5/site-packages/
+7.6 pip3 uninstall django-polls
+
+Part 9: What to read next
+https://docs.djangoproject.com/en/2.1/
+https://github.com/django/django/tree/master/docs
+
+https://docs.djangoproject.com/en/2.1/intro/
+
+**
+https://docs.djangoproject.com/en/2.1/topics/
+**
+
+https://docs.djangoproject.com/en/2.1/howto/
+https://docs.djangoproject.com/en/2.1/faq/
+
+Part 10: Writing your first patch for Django
 
