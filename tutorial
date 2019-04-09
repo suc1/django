@@ -231,3 +231,7 @@ Part 5: testing
 5.1 django.test.TestCase
 5.2 python3 manage.py test polls
 5.3 django.test.Client
+
+Part 6: staticfiles
+6.1 django.contrib.staticfiles
+
